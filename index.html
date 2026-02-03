@@ -16,3 +16,44 @@ Ir a mi página
 
 </body>
 </html>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Reloj y calendario</title>
+
+<style>
+body {
+  background: black;
+  color: lime;
+  text-align: center;
+  font-family: monospace;
+  font-size: 40px;
+}
+</style>
+
+<script>
+function actualizarHora() {
+  let ahora = new Date();
+
+  let hora = ahora.toLocaleTimeString();
+  let fecha = ahora.toLocaleDateString();
+
+  document.getElementById("reloj").innerHTML = hora;
+  document.getElementById("fecha").innerHTML = fecha;
+}
+
+setInterval(actualizarHora, 1000);
+</script>
+
+</head>
+
+<body onload="actualizarHora()">
+
+<h1>🕒 Reloj</h1>
+<div id="reloj"></div>
+
+<h1>📅 Calendario</h1>
+<div id="fecha"></div>
+
+</body>
+</html>
